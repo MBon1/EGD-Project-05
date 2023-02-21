@@ -9,7 +9,7 @@ public class NumericInputField : EditorWidget
     InputField inputField;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         inputField = this.GetComponent<InputField>();
     }

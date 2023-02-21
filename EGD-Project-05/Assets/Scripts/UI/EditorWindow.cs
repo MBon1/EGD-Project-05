@@ -7,4 +7,5 @@ public abstract class EditorWindow : MonoBehaviour
     protected GameObject target;
 
     public abstract void SetTargetProperty();
+    public abstract void SetTargetObject(GameObject obj);
 }

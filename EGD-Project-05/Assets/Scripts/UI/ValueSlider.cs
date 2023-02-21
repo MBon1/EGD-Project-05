@@ -9,7 +9,7 @@ public class ValueSlider : EditorWidget
     [SerializeField] Text sliderText;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         slider = this.GetComponent<Slider>();
     }

@@ -45,7 +45,7 @@ public class PhysicsEditorController : MonoBehaviour
             if (selectedObject != null)
             {
                 Debug.Log("Target Object: " + selectedObject.name);
-                editorWindow.SetGameObject(selectedObject);
+                editorWindow.SetTargetObject(selectedObject);
                 /*PhysicsMaterial2D currentMaterial = selectedObject.GetComponent<Collider2D>().sharedMaterial;
                 if (currentMaterial != null)
                 {

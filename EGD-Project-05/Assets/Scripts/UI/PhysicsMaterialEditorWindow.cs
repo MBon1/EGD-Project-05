@@ -33,7 +33,7 @@ public class PhysicsMaterialEditorWindow : EditorWindow
         return material;
     }
 
-    public void SetGameObject(GameObject obj)
+    public override void SetTargetObject(GameObject obj)
     {
         if (obj != null)
         {
