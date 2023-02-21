@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuoyancyEditorWindow : EditorWindow
 {
     [SerializeField] NumericInputField densityInputField;
-    [SerializeField] NumericInputField surfaceLevelInputField;
+    [SerializeField] ValueSlider surfaceLevelInputField;
     [SerializeField] NumericInputField flowMagnitudeInputField;
 
 
