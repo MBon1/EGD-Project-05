@@ -14,7 +14,7 @@ public class NumericInputField : EditorWidget
         inputField = this.GetComponent<InputField>();
     }
 
-    public void SetValue()
+    public override void SetValue()
     {
         string inputText = inputField.text;
 
@@ -26,14 +26,14 @@ public class NumericInputField : EditorWidget
         SetValue(newValue, true);
     }
 
-    public void SetValue(float val, bool setMaterial)
+    public override void SetValue(float val, bool setProperty)
     {
         value = Mathf.Clamp(val, cap.x, cap.y);
         inputField.text = value.ToString("0.00");
 
-        if (target != null)
+        if (target != null && setProperty)
         {
-            SetMaterial();
+            SetProperty();
         }
     }
 }

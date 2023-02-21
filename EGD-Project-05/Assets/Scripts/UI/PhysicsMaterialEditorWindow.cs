@@ -2,23 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhysicsMaterialEditorWindow : MonoBehaviour
+public class PhysicsMaterialEditorWindow : EditorWindow
 {
     [SerializeField] NumericInputField inputField;
     [SerializeField] ValueSlider slider;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void SetDefaultValues(float friction, float bounciness)
     {
@@ -65,7 +53,18 @@ public class PhysicsMaterialEditorWindow : MonoBehaviour
             }
         }
 
+        target = obj;
         inputField.target = obj;
         slider.target = obj;
+    }
+
+    public override void SetTargetProperty()
+    {
+        if (target != null)
+        {
+            PhysicsMaterial2D material = GetPhysicsMaterial();
+            target.GetComponent<Collider2D>().sharedMaterial = material;
+            Debug.Log(target.name + " Material || Friction - " + material.friction + " | Bounciness: " + material.bounciness);
+        }
     }
 }

@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EditorWidget : MonoBehaviour
+public abstract class EditorWidget : MonoBehaviour
 {
-    public float value;
+    public float value { get; protected set; }
     public GameObject target;
-    [SerializeField] PhysicsMaterialEditorWindow editorWindow;
+    [SerializeField] EditorWindow editorWindow;
 
 
-    protected void SetMaterial()
+    protected void SetProperty()
     {
-        if (target != null)
+        editorWindow.SetTargetProperty();
+
+        /*if (target != null)
         {
             PhysicsMaterial2D material = editorWindow.GetPhysicsMaterial();
             target.GetComponent<Collider2D>().sharedMaterial = material;
             Debug.Log(target.name + " Material || Friction - " + material.friction + " | Bounciness: " + material.bounciness);
-        }
+        }*/
     }
+
+    public abstract void SetValue();
+
+    public abstract void SetValue(float val, bool setProperty);
 }

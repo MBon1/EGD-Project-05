@@ -14,19 +14,19 @@ public class ValueSlider : EditorWidget
         slider = this.GetComponent<Slider>();
     }
 
-    public void SetValue()
+    public override void SetValue()
     {
         SetValue(slider.value, true);
     }
 
-    public void SetValue(float val, bool setMaterial)
+    public override void SetValue(float val, bool setProperty)
     {
         value = val;
         sliderText.text = value.ToString("0.00");
 
-        if (setMaterial)
+        if (target != null && setProperty)
         {
-            SetMaterial();
+            SetProperty();
         }
     }
 }
