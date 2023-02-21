@@ -7,6 +7,8 @@ public class PhysicsEditorController : MonoBehaviour
     Camera mainCamera;
     public GameObject selectedObject;
 
+    public PhysicsMaterialEditorWindow editorWindow;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -22,20 +24,35 @@ public class PhysicsEditorController : MonoBehaviour
     void Update()
     {
         // Right click
-        // Get first object with a Rigidbody2D that was right clicked on
+        // Get first object with a Collider2D that was right clicked on
         if (Input.GetMouseButtonDown(1))
         {
+            selectedObject = null;
+            // Close editor menu
+
             Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D[] hits = Physics2D.RaycastAll(new Vector2(mousePos.x, mousePos.y), Vector2.zero, 0f);
 
-            selectedObject = null;
             foreach (RaycastHit2D hit in hits)
             {
-                if (hit.collider.gameObject.GetComponent<Rigidbody2D>())
+                if (hit.collider.gameObject.GetComponent<Collider2D>())
                 {
                     selectedObject = hit.collider.gameObject;
                     break;
                 }
+            }
+
+            if (selectedObject != null)
+            {
+                Debug.Log("Target Object: " + selectedObject.name);
+                editorWindow.SetGameObject(selectedObject);
+                /*PhysicsMaterial2D currentMaterial = selectedObject.GetComponent<Collider2D>().sharedMaterial;
+                if (currentMaterial != null)
+                {
+                    // Get current material's properties
+                }
+                // Open editor menu
+                selectedObject.GetComponent<Collider2D>().sharedMaterial = editorWindow.GetPhysicsMaterial();*/
             }
         }
     }
