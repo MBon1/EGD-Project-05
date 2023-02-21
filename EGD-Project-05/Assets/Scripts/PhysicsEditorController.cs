@@ -7,7 +7,7 @@ public class PhysicsEditorController : MonoBehaviour
     Camera mainCamera;
     public GameObject selectedObject;
 
-    public PhysicsMaterialEditorWindow editorWindow;
+    public EditorWindow editorWindow;
 
     private void Awake()
     {
