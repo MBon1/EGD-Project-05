@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 7706204568984064336}
   slider: {fileID: 7317098500451288586}
+  disableBounciness: 0
 --- !u!1001 &3829272444623951937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,6 +617,18 @@ PrefabInstance:
     - target: {fileID: 7341789824785628924, guid: 7a29bb44d059f7d4da87f09a72a733df, type: 3}
       propertyPath: m_Text
       value: Physics Material
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341789824785628924, guid: 7a29bb44d059f7d4da87f09a72a733df, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341789824785628924, guid: 7a29bb44d059f7d4da87f09a72a733df, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341789824785628924, guid: 7a29bb44d059f7d4da87f09a72a733df, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7341789824785628927, guid: 7a29bb44d059f7d4da87f09a72a733df, type: 3}
       propertyPath: m_AnchorMax.y
