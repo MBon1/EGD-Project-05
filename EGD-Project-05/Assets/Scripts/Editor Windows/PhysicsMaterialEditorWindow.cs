@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PhysicsMaterialEditorWindow : EditorWindow
 {
-    [SerializeField] NumericInputField inputField;
+    [SerializeField] ValueSlider inputField;
     [SerializeField] ValueSlider slider;
     
 
@@ -47,10 +47,7 @@ public class PhysicsMaterialEditorWindow : EditorWindow
             {
                 collider.sharedMaterial = new PhysicsMaterial2D();
             }
-            else
-            {
-                SetDefaultValues(collider.sharedMaterial.friction, collider.sharedMaterial.bounciness);
-            }
+            SetDefaultValues(collider.sharedMaterial.friction, collider.sharedMaterial.bounciness);
         }
 
         target = obj;

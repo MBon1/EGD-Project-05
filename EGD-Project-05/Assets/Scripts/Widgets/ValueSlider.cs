@@ -12,6 +12,7 @@ public class ValueSlider : EditorWidget
     private void Awake()
     {
         slider = this.GetComponent<Slider>();
+        SetValue();
     }
 
     public override void SetValue()
@@ -21,7 +22,7 @@ public class ValueSlider : EditorWidget
 
     public override void SetValue(float val, bool setProperty)
     {
-        value = val;
+        value = Mathf.Clamp(val, slider.minValue, slider.maxValue);
         sliderText.text = value.ToString("0.00");
 
         if (target != null && setProperty)
