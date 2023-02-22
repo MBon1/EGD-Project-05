@@ -9,15 +9,15 @@ public class PhysicsEditorController : MonoBehaviour
 
     public PhysicsEditorWindow editorWindow;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip selectSFX;
+    [SerializeField] AudioClip deselectSFX;
+
     private void Awake()
     {
         mainCamera = Camera.main;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        audioSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,11 +50,13 @@ public class PhysicsEditorController : MonoBehaviour
                 selectedObject = hit.collider.gameObject;
                 editorWindow.EnablePhysMatWindow(true);
                 editorWindow.physMatEditor.SetTargetObject(selectedObject);
+                PlaySFX(true);
             }
             else
             {
                 editorWindow.EnablePhysMatWindow(false);
                 editorWindow.physMatEditor.SetTargetObject(selectedObject);
+                PlaySFX(false);
             }            
         }
 
@@ -62,5 +64,21 @@ public class PhysicsEditorController : MonoBehaviour
         {
             SceneLoader.ReloadScene();
         }*/
+    }
+
+    void PlaySFX(bool success)
+    {
+        AudioClip clip;
+        if (success)
+        {
+            clip = selectSFX;
+        }
+        else
+        {
+            clip = deselectSFX;
+        }
+
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }
