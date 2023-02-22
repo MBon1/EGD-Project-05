@@ -8,6 +8,16 @@ public class GoalManager : MonoBehaviour
     [SerializeField] AudioSource source;
     bool goalReached = false;
 
+    [SerializeField] PhysicsEditorController editor;
+
+    private void Update()
+    {
+        if (editor.disablePlayerControls)
+        {
+            goalReached = true;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // if collision is the ball
@@ -17,6 +27,7 @@ public class GoalManager : MonoBehaviour
 
     IEnumerator GoalReached()
     {
+        editor.DisablePlayerControls();
         goalReached = true;
         source.Play();
         yield return new WaitWhile(() => source.isPlaying);

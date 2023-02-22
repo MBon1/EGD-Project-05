@@ -9,6 +9,8 @@ public class PhysicsEditorController : MonoBehaviour
 
     public PhysicsEditorWindow editorWindow;
 
+    public bool disablePlayerControls = false;
+
     [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip selectSFX;
@@ -23,6 +25,11 @@ public class PhysicsEditorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (disablePlayerControls)
+        {
+            return;
+        }
+
         // Right click
         // Get first object with a Collider2D that was right clicked on
         if (Input.GetMouseButtonDown(1))
@@ -80,5 +87,10 @@ public class PhysicsEditorController : MonoBehaviour
 
         audioSource.clip = clip;
         audioSource.Play();
+    }
+
+    public void DisablePlayerControls()
+    {
+        disablePlayerControls = true;
     }
 }
