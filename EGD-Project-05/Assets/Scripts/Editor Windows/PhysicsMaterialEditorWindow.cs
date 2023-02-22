@@ -6,18 +6,33 @@ public class PhysicsMaterialEditorWindow : EditorWindow
 {
     [SerializeField] ValueSlider inputField;
     [SerializeField] ValueSlider slider;
-    
+    float sliderHeight = 55;
+
+    [SerializeField] bool disableBounciness = false;
+
+    protected void Awake()
+    {
+        if (disableBounciness)
+        {
+            Destroy(slider.transform.parent.parent.gameObject);
+            float newHeight = this.gameObject.GetComponent<RectTransform>().rect.height - sliderHeight;
+            SetHeight(newHeight);
+            base.Awake();
+        }
+    }
 
     public void SetDefaultValues(float friction, float bounciness)
     {
         inputField.SetValue(friction, false);
-        slider.SetValue(bounciness, false);
+        if (!disableBounciness)
+            slider.SetValue(bounciness, false);
     }
 
     protected override void SetAllWidgetsActiveness(bool active)
     {
         inputField.transform.parent.parent.gameObject.SetActive(active);
-        slider.transform.parent.parent.gameObject.SetActive(active);
+        if (!disableBounciness)
+            slider.transform.parent.parent.gameObject.SetActive(active);
     }
 
     public float GetFrictionValue()
@@ -27,7 +42,10 @@ public class PhysicsMaterialEditorWindow : EditorWindow
 
     public float GetBouncinessValue()
     {
-        return slider.value;
+        if (!disableBounciness)
+            return slider.value;
+
+        return 0;
     }
 
     public PhysicsMaterial2D GetPhysicsMaterial()
@@ -45,15 +63,20 @@ public class PhysicsMaterialEditorWindow : EditorWindow
         {
             target = null;
             inputField.target = null;
-            slider.target = null;
-            SetDefaultValues(inputField.minValue(), slider.minValue());
+            if (!disableBounciness)
+                slider.target = null;
+            if (!disableBounciness)
+                SetDefaultValues(inputField.minValue(), slider.minValue());
+            else
+                SetDefaultValues(inputField.minValue(), 0);
             SetAllWidgetsInteractability(false);
         }
         else
         {
             target = obj;
             inputField.target = obj;
-            slider.target = obj;
+            if (!disableBounciness)
+                slider.target = obj;
 
             SetAllWidgetsInteractability(true);
 

@@ -881,6 +881,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4389455319246773374, guid: 0244babaa1b31e84695685e09523ff13, type: 3}
+      propertyPath: disableBounciness
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6257069700499522168, guid: 0244babaa1b31e84695685e09523ff13, type: 3}
       propertyPath: m_RootOrder
       value: 4
