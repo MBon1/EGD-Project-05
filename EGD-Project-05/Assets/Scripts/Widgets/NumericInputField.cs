@@ -8,6 +8,12 @@ public class NumericInputField : EditorWidget
     [SerializeField] Vector2 cap = new Vector2(float.MinValue, float.MaxValue);
     InputField inputField;
 
+    public override bool interactable
+    {
+        get { return inputField.interactable; }   // get method
+        set { inputField.interactable = value; }  // set method
+    }
+
     // Start is called before the first frame update
     private void Awake()
     {

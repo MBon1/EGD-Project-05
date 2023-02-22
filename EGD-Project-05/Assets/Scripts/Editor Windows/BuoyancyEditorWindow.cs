@@ -16,6 +16,13 @@ public class BuoyancyEditorWindow : EditorWindow
         flowMagnitudeInputField.SetValue(flowMagnitude, false);
     }
 
+    protected override void SetAllWidgetsActiveness(bool active)
+    {
+        densityInputField.transform.parent.parent.gameObject.SetActive(active);
+        surfaceLevelInputField.transform.parent.parent.gameObject.SetActive(active);
+        flowMagnitudeInputField.transform.parent.parent.gameObject.SetActive(active);
+    }
+
     public float GetDensityValue()
     {
         return densityInputField.value;

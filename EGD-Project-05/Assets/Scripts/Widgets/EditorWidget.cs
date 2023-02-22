@@ -9,6 +9,12 @@ public abstract class EditorWidget : MonoBehaviour
     public GameObject target;
     [SerializeField] EditorWindow editorWindow;
 
+    public abstract bool interactable
+    {
+        get;    // get method
+        set;    // set method
+    }
+
 
     protected void SetProperty()
     {

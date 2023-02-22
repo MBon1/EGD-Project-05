@@ -7,7 +7,8 @@ public class PhysicsEditorController : MonoBehaviour
     Camera mainCamera;
     public GameObject selectedObject;
 
-    public EditorWindow editorWindow;
+    public PhysicsSettingsEditorWindow physSettingsEditor;
+    public PhysicsMaterialEditorWindow physMatEditor;
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class PhysicsEditorController : MonoBehaviour
                 }
             }
 
-            editorWindow.SetTargetObject(selectedObject);
+            physMatEditor.SetTargetObject(selectedObject);
         }
     }
 

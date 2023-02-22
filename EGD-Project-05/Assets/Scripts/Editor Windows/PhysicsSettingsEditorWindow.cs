@@ -23,6 +23,13 @@ public class PhysicsSettingsEditorWindow : EditorWindow
         timeInputField.SetValue(Time.timeScale, false);
     }
 
+    protected override void SetAllWidgetsActiveness(bool active)
+    {
+        gravXInputField.transform.parent.parent.gameObject.SetActive(active);
+        gravYInputField.transform.parent.parent.gameObject.SetActive(active);
+        timeInputField.transform.parent.parent.gameObject.SetActive(active);
+    }
+
     public Vector2 GetGravityValue()
     {
         return new Vector2(gravXInputField.value, gravYInputField.value);

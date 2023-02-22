@@ -8,6 +8,12 @@ public class ValueSlider : EditorWidget
     Slider slider;
     [SerializeField] Text sliderText;
 
+    public override bool interactable
+    {
+        get { return slider.interactable; }   // get method
+        set { slider.interactable = value; }  // set method
+    }
+
     // Start is called before the first frame update
     private void Awake()
     {

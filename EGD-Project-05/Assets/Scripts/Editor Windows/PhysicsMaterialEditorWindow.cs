@@ -14,6 +14,12 @@ public class PhysicsMaterialEditorWindow : EditorWindow
         slider.SetValue(bounciness, false);
     }
 
+    protected override void SetAllWidgetsActiveness(bool active)
+    {
+        inputField.transform.parent.parent.gameObject.SetActive(active);
+        slider.transform.parent.parent.gameObject.SetActive(active);
+    }
+
     public float GetFrictionValue()
     {
         return inputField.value;
@@ -41,12 +47,15 @@ public class PhysicsMaterialEditorWindow : EditorWindow
             inputField.target = null;
             slider.target = null;
             SetDefaultValues(inputField.minValue(), slider.minValue());
+            SetAllWidgetsInteractability(false);
         }
         else
         {
             target = obj;
             inputField.target = obj;
             slider.target = obj;
+
+            SetAllWidgetsInteractability(true);
 
             Collider2D collider = target.GetComponent<Collider2D>();
 
