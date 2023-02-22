@@ -17,8 +17,8 @@ public class PhysicsMaterialEditorWindow : EditorWindow
             Destroy(slider.transform.parent.parent.gameObject);
             float newHeight = this.gameObject.GetComponent<RectTransform>().rect.height - sliderHeight;
             SetHeight(newHeight);
-            base.Awake();
         }
+        base.Awake();
     }
 
     public void SetDefaultValues(float friction, float bounciness)
