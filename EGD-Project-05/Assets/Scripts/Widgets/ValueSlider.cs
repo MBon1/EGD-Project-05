@@ -24,6 +24,7 @@ public class ValueSlider : EditorWidget
     {
         value = Mathf.Clamp(val, slider.minValue, slider.maxValue);
         sliderText.text = value.ToString("0.00");
+        slider.value = value;
 
         if (target != null && setProperty)
         {
