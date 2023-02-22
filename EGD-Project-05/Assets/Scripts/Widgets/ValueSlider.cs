@@ -26,9 +26,19 @@ public class ValueSlider : EditorWidget
         sliderText.text = value.ToString("0.00");
         slider.value = value;
 
-        if (target != null && setProperty)
+        if (setProperty)
         {
             SetProperty();
         }
+    }
+
+    public float minValue()
+    {
+        return slider.minValue;
+    }
+
+    public float maxValue()
+    {
+        return slider.maxValue;
     }
 }

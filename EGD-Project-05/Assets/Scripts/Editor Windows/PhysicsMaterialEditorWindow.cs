@@ -35,24 +35,29 @@ public class PhysicsMaterialEditorWindow : EditorWindow
 
     public override void SetTargetObject(GameObject obj)
     {
-        if (obj != null)
+        if (obj == null || obj.GetComponent<Collider2D>() == null)
         {
-            Collider2D collider = obj.GetComponent<Collider2D>();
-            if (collider == null)
-            {
-                return;
-            }
+            target = null;
+            inputField.target = null;
+            slider.target = null;
+            SetDefaultValues(inputField.minValue(), slider.minValue());
+        }
+        else
+        {
+            target = obj;
+            inputField.target = obj;
+            slider.target = obj;
+
+            Collider2D collider = target.GetComponent<Collider2D>();
 
             if (collider.sharedMaterial == null)
             {
-                collider.sharedMaterial = new PhysicsMaterial2D();
+                PhysicsMaterial2D physMat = new PhysicsMaterial2D();
+                collider.sharedMaterial = physMat;
             }
+
             SetDefaultValues(collider.sharedMaterial.friction, collider.sharedMaterial.bounciness);
         }
-
-        target = obj;
-        inputField.target = obj;
-        slider.target = obj;
     }
 
     public override void SetTargetProperty()

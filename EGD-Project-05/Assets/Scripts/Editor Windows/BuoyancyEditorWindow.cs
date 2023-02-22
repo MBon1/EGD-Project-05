@@ -35,14 +35,14 @@ public class BuoyancyEditorWindow : EditorWindow
     {
         if (obj != null && obj.GetComponent<BuoyancyEffector2D>() != null)
         {
-            BuoyancyEffector2D buoyancy = obj.GetComponent<BuoyancyEffector2D>();
-
-            SetDefaultValues(buoyancy.density, buoyancy.surfaceLevel, buoyancy.flowMagnitude);
-
             target = obj;
             densityInputField.target = obj;
             surfaceLevelInputField.target = obj;
             flowMagnitudeInputField.target = obj;
+
+            BuoyancyEffector2D buoyancy = target.GetComponent<BuoyancyEffector2D>();
+
+            SetDefaultValues(buoyancy.density, buoyancy.surfaceLevel, buoyancy.flowMagnitude);
         }
         else
         {
@@ -50,6 +50,8 @@ public class BuoyancyEditorWindow : EditorWindow
             densityInputField.target = null;
             surfaceLevelInputField.target = null;
             flowMagnitudeInputField.target = null;
+
+            SetDefaultValues(densityInputField.minValue(), surfaceLevelInputField.minValue(), flowMagnitudeInputField.minValue());
         }
     }
 

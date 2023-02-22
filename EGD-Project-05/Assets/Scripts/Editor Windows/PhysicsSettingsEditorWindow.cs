@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PhysicsSettingsEditorWindow : EditorWindow
 {
-    [SerializeField] NumericInputField gravXInputField;
-    [SerializeField] NumericInputField gravYInputField;
-    [SerializeField] NumericInputField timeInputField;
+    [SerializeField] ValueSlider gravXInputField;
+    [SerializeField] ValueSlider gravYInputField;
+    [SerializeField] ValueSlider timeInputField;
 
     private void Start()
     {

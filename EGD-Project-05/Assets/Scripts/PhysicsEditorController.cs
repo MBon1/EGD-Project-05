@@ -42,18 +42,7 @@ public class PhysicsEditorController : MonoBehaviour
                 }
             }
 
-            if (selectedObject != null)
-            {
-                Debug.Log("Target Object: " + selectedObject.name);
-                editorWindow.SetTargetObject(selectedObject);
-                /*PhysicsMaterial2D currentMaterial = selectedObject.GetComponent<Collider2D>().sharedMaterial;
-                if (currentMaterial != null)
-                {
-                    // Get current material's properties
-                }
-                // Open editor menu
-                selectedObject.GetComponent<Collider2D>().sharedMaterial = editorWindow.GetPhysicsMaterial();*/
-            }
+            editorWindow.SetTargetObject(selectedObject);
         }
     }
 
