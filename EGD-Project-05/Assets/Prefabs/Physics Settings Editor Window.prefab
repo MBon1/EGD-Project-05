@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6905635859182717200, guid: 2f7a20bab2766c748be6352fff67ce46, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6905635859182717201, guid: 2f7a20bab2766c748be6352fff67ce46, type: 3}
       propertyPath: editorWindow
