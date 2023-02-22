@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 5e255d8a241285744bebe4a577986460
+guid: 563babfe72c83be4d94487c3c694e0d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8437838980916636851
-    second: ui edg5_0
+      213: 6259983639586318526
+    second: slider_0
   - first:
-      213: -2715338829604292022
-    second: ui edg5_1
+      213: -4749140598178888764
+    second: slider_1
   - first:
-      213: 3326640673045574667
-    second: ui edg5_2
-  - first:
-      213: -7698920408468678343
-    second: ui edg5_3
+      213: -8122164587498115561
+    second: slider_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui edg5_0
+      name: slider_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bcea79f8d9391570800000000000000
-      internalID: 8437838980916636851
+      spriteID: eb8ac4114fdefd650800000000000000
+      internalID: 6259983639586318526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui edg5_1
+      name: slider_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 500
         y: 0
-        width: 32
-        height: 32
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4a7c9098bd215ad0800000000000000
-      internalID: -2715338829604292022
+      spriteID: 4c34929b9c9a71eb0800000000000000
+      internalID: -4749140598178888764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui edg5_2
+      name: slider_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 1000
         y: 0
-        width: 32
-        height: 32
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,29 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b047f3c111a9a2e20800000000000000
-      internalID: 3326640673045574667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui edg5_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 939183bdda0f72590800000000000000
-      internalID: -7698920408468678343
+      spriteID: 71eeaea3756484f80800000000000000
+      internalID: -8122164587498115561
       vertices: []
       indices: 
       edges: []
