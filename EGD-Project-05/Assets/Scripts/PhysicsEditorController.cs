@@ -7,8 +7,7 @@ public class PhysicsEditorController : MonoBehaviour
     Camera mainCamera;
     public GameObject selectedObject;
 
-    public PhysicsSettingsEditorWindow physSettingsEditor;
-    public PhysicsMaterialEditorWindow physMatEditor;
+    public PhysicsEditorWindow editorWindow;
 
     private void Awake()
     {
@@ -31,7 +30,7 @@ public class PhysicsEditorController : MonoBehaviour
             selectedObject = null;
             // Close editor menu
 
-            Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            /*Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D[] hits = Physics2D.RaycastAll(new Vector2(mousePos.x, mousePos.y), Vector2.zero, 0f);
 
             foreach (RaycastHit2D hit in hits)
@@ -41,9 +40,22 @@ public class PhysicsEditorController : MonoBehaviour
                     selectedObject = hit.collider.gameObject;
                     break;
                 }
-            }
+            }*/
 
-            physMatEditor.SetTargetObject(selectedObject);
+            Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(mousePos.x, mousePos.y), Vector2.zero, 0f);
+
+            if (hit)
+            {
+                selectedObject = hit.collider.gameObject;
+                editorWindow.EnablePhysMatWindow(true);
+                editorWindow.physMatEditor.SetTargetObject(selectedObject);
+            }
+            else
+            {
+                editorWindow.EnablePhysMatWindow(false);
+                editorWindow.physMatEditor.SetTargetObject(selectedObject);
+            }            
         }
     }
 
