@@ -1503,6 +1503,10 @@ PrefabInstance:
       value: Shelf (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8889485433335073937, guid: df17e358dd7ef764aaa1ebb852fb8b5c, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889485433335073937, guid: df17e358dd7ef764aaa1ebb852fb8b5c, type: 3}
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
