@@ -57,10 +57,10 @@ public class PhysicsEditorController : MonoBehaviour
                 editorWindow.physMatEditor.SetTargetObject(selectedObject);
             }            
         }
-    }
 
-    /*public enum PhysicsProperty
-    {
-        Gravity
-    }*/
+        /*if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneLoader.ReloadScene();
+        }*/
+    }
 }
