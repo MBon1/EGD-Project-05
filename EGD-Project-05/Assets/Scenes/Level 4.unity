@@ -696,6 +696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Physics Editor
       objectReference: {fileID: 0}
+    - target: {fileID: 6257069700761066715, guid: 0244babaa1b31e84695685e09523ff13, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1721043475}
     - target: {fileID: 6679473859768769064, guid: 0244babaa1b31e84695685e09523ff13, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
